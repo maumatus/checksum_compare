@@ -46,7 +46,14 @@ app.get('/',(req, res)=> {
         if (result) {
             console.log("ambos grupos tienen los mismos archivos validados");
         } else {
-            console.log("los grupos de archivos no coinciden");
+            console.log("los grupos de archivos no coinciden y los siguientes archivos no se validaron");
+            const el_distintos = arr1.filter(
+                function (i) {
+                    return this.indexOf(i) < 0;
+                },
+                arr2
+            );
+            console.log(el_distintos)
         }
     }
     compareArrays(arch_video_a, arch_video_b);
