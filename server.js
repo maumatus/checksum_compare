@@ -18,8 +18,6 @@ app.get('/',(req, res)=> {
             let el = lineas[i];
             arch_video_a.push(el);
         }
-        let used = process.memoryUsage().heapUsed / 1024 / 1024;
-        console.log(`el script uso aproximadamente ${Math.round(used * 100)}MB`)
     } catch (error) {
         console.log(error);
     }
@@ -34,8 +32,8 @@ app.get('/',(req, res)=> {
             let el = lineas[i];
             arch_video_b.push(el);
         }
-        let used = process.memoryUsage().heapUsed / 1024 / 1024;
-        console.log(`el script uso aproximadamente ${Math.round(used * 100)}MB`)
+        let used = process.memoryUsage().heapUsed / 1000000;
+        console.log(`el script uso aproximadamente ${Math.round(used)}MB`)
     } catch (error) {
         console.log(error);
     }
